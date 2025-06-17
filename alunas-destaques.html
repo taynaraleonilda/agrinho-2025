@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festejando a Conexão entre Campo e Cidade</title>
+
+  <!-- Fontes e Swiper -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --branco-principal: #FFFFFF;
+      --cinza-secundario: #555555;
+      --botao-verde: #3B6E22;
+      --botao-verde-escuro: #2E5319;
+      --rodape-fundo: #6E4B2A;
+      --botao-ativo: #A4C639;
+      --cor-de-fundo: #F9F7F1;
+      --preto-escuro: #3B6E22;
+      --fonte-principal: 'Josefin Sans', sans-serif;
+      --sombra: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cor-de-fundo);
+      color: var(--preto-escuro);
+      font-family: var(--fonte-principal);
+      margin: 0;
+      padding: 0 1.5em;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url('img/fundo-personalizado.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+
+    header {
+      background-color: var(--botao-verde);
+      padding: 1em 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--branco-principal);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--botao-ativo);
+      border-bottom-color: var(--botao-ativo);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3em auto 5em;
+      padding: 2em 2.5em;
+      background: var(--branco-principal);
+      border-radius: 12px;
+      box-shadow: 0 6px 15px var(--sombra);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5em;
+      color: var(--botao-verde);
+      text-align: center;
+      text-shadow: 1px 1px 2px var(--botao-verde-escuro);
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1.3em;
+      color: var(--cinza-secundario);
+    }
+
+    strong {
+      color: var(--botao-verde);
+      font-weight: 700;
+    }
+
+    .swiper {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+
+    .swiper-slide {
+      background: var(--botao-verde);
+      color: var(--branco-principal);
+      border-radius: 12px;
+      padding: 1.8em 2em;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1em;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .slide-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.6em;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .slide-text {
+      font-size: 1.1rem;
+      color: #dce5d3;
+      line-height: 1.4;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--botao-verde-escuro);
+    }
+
+    .swiper-pagination-bullet {
+      background: var(--botao-verde-escuro);
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--botao-ativo);
+      opacity: 1;
+    }
+
+    footer {
+      background-color: var(--rodape-fundo);
+      color: var(--branco-principal);
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px var(--sombra);
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      .swiper-slide img {
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Festejando a Conexão entre Campo e Cidade</h1>
+
+    <p>O interior do Paraná tem muito a comemorar. Em Mercedes, o talento e a dedicação dos jovens mostram que <strong>o campo também sonha alto</strong> e chega longe. O intercâmbio educacional tem sido uma ponte entre as raízes rurais e as experiências urbanas e internacionais — um verdadeiro motivo de celebração!</p>
+
+    <p>Neste espírito de festa e orgulho, destacamos as conquistas de duas estudantes mercedenses que representam com brilho essa união: <strong>Taynara Hasckel</strong> e <strong>Luana Weber</strong>. Suas histórias são exemplos vivos de como o conhecimento conecta o local ao global.</p>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper" aria-label="Histórias das alunas de Mercedes">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="img/taynara.jpg" alt="Taynara Hasckel na Austrália" />
+          <div class="slide-title">Taynara Hasckel</div>
+          <div class="slide-text">
+            Filha do campo, Taynara embarca rumo à Austrália em julho de 2025 pelo programa Ganhando o Mundo. Leva com ela os valores da sua comunidade rural e o desejo de aprender, representando Mercedes no cenário internacional.
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="img/luana.jpg" alt="Luana Weber em intercâmbio" />
+          <div class="slide-title">Luana Weber</div>
+          <div class="slide-text">
+            Em 2024, Luana teve a oportunidade de viver uma imersão cultural pelo mundo. Criada em Mercedes, mostrou que as sementes plantadas no campo florescem em qualquer lugar — inclusive fora do país.
+          </div>
+        </div>
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-next" aria-label="Próximo slide"></div>
+      <div class="swiper-button-prev" aria-label="Slide anterior"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Rota Rural Mercedes. Todos os direitos reservados.
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      keyboard: {
+        enabled: true
+      },
+      a11y: {
+        enabled: true
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projetos em Destaque - Mercedes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --branco-principal: #FFFFFF;
+      --cinza-secundario: #555555;
+      --botao-verde: #3B6E22;
+      --botao-verde-escuro: #2E5319;
+      --rodape-fundo: #6E4B2A;
+      --botao-ativo: #A4C639;
+      --cor-de-fundo: #F9F7F1;
+      --preto-escuro: #3B6E22;
+      --fonte-principal: 'Josefin Sans', sans-serif;
+      --sombra: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cor-de-fundo);
+      color: var(--preto-escuro);
+      font-family: var(--fonte-principal);
+      margin: 0;
+      padding: 0 1.5em;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.9);
+      z-index: -1;
+    }
+
+    header {
+      background-color: var(--botao-verde);
+      padding: 1em 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--branco-principal);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--botao-ativo);
+      border-bottom-color: var(--botao-ativo);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3em auto 5em;
+      padding: 2em 2.5em;
+      background: var(--branco-principal);
+      border-radius: 12px;
+      box-shadow: 0 6px 15px var(--sombra);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5em;
+      color: var(--botao-verde);
+      text-align: center;
+      text-shadow: 1px 1px 2px var(--botao-verde-escuro);
+    }
+
+    p.intro {
+      font-size: 1.25rem;
+      margin-bottom: 1.5em;
+      color: var(--cinza-secundario);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .swiper {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+
+    .swiper-slide {
+      background: var(--botao-verde);
+      color: var(--branco-principal);
+      border-radius: 12px;
+      padding: 1.8em 2em;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .slide-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .slide-text {
+      font-size: 1rem;
+      color: #dce5d3;
+      line-height: 1.4;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--botao-verde-escuro);
+      cursor: pointer;
+    }
+
+    .swiper-pagination-bullet {
+      background: var(--botao-verde-escuro);
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--botao-ativo);
+      opacity: 1;
+    }
+
+    footer {
+      background-color: var(--rodape-fundo);
+      color: var(--branco-principal);
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px var(--sombra);
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      .swiper-slide img {
+        max-height: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" aria-label="Ir para a página inicial" style="color: var(--branco-principal); font-weight:700; font-size:1.3rem; text-decoration:none;">Mercedes Projetos</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Projetos em Destaque - Mercedes</h1>
+    <p class="intro">Conheça os projetos que fazem a diferença para a nossa comunidade, promovendo educação, assistência social e qualidade de vida para todos.</p>
+
+    <div class="swiper mySwiper" aria-label="Projetos em destaque de Mercedes">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749c1?auto=format&fit=crop&w=600&q=80" alt="Estudante recebendo ajuda financeira para faculdade" />
+          <div class="slide-title">Financiamento para Faculdade</div>
+          <div class="slide-text">
+            Projeto que oferece financiamento com juros baixos para estudantes da cidade, facilitando o acesso ao ensino superior e a realização dos sonhos acadêmicos.
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Transporte para estudantes universitários" />
+          <div class="slide-title">Transporte para Faculdade</div>
+          <div class="slide-text">
+            Apoio no transporte para estudantes, garantindo segurança e conforto no trajeto até as instituições de ensino, promovendo a permanência na faculdade.
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Entrega de uniforme escolar" />
+          <div class="slide-title">Entrega Anual de Uniformes</div>
+          <div class="slide-text">
+            Projeto social que distribui uniformes escolares todos os anos, garantindo que todos os alunos tenham condições adequadas para frequentar a escola com dignidade.
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Viagem para idosos" />
+          <div class="slide-title">Projetos para Idosos</div>
+          <div class="slide-text">
+            Inclui viagens organizadas, clubes para terceira idade e atividades que promovem saúde, lazer e interação social para os idosos da cidade.
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=600&q=80" alt="Centro de Referência da Assistência Social (CRAS)" />
+          <div class="slide-title">CRAS - Assistência Social</div>
+          <div class="slide-text">
+            O Centro de Referência de Assistência Social apoia famílias em situação de vulnerabilidade com serviços, projetos e encaminhamentos para melhoria da qualidade de vida.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-button-next" aria-label="Próximo slide"></div>
+      <div class="swiper-button-prev" aria-label="Slide anterior"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Prefeitura de Mercedes. Todos os direitos reservados.
+  </footer>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      keyboard: {
+        enabled: true
+      },
+      a11y: {
+        enabled: true
+      }
+    });
+  </script>
+</body>
+</html>

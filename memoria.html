@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Memória - Rota Rural Mercedes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #3A6351;
+      margin-bottom: 20px;
+    }
+
+    .score-board {
+      font-size: 1.5em;
+      color: #3A6351;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 1.5em;
+      color: #D32F2F;
+      margin-bottom: 20px;
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      grid-gap: 10px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .card {
+      width: 200px;
+      height: 200px;
+      background-color: #6B6B6B;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .card img {
+      width: 80%;
+      height: 80%;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .card.flipped img {
+      display: block;
+    }
+
+    .card.flipped {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card.matched {
+      background-color: #98FB98;
+      pointer-events: none;
+      transform: scale(1.1);
+    }
+
+    .button {
+      padding: 12px 30px;
+      background-color: #3A6351;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 40px;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #2b4d35;
+      transform: translateY(-5px);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Jogo da Memória</h1>
+  <div class="score-board" id="scoreBoard">Pontuação: 0</div>
+  <div class="timer" id="timer">Tempo restante: 02:00</div>
+  <div class="game-board" id="gameBoard">
+    <!-- Cartas vão ser inseridas dinamicamente aqui -->
+  </div>
+
+  <!-- Botões -->
+  <a href="figurinhas.html" class="button">Voltar</a>
+
+  <script>
+    const cardsArray = [
+      { src: "img/card1.png", id: 1 },
+      { src: "img/card2.png", id: 2 },
+      { src: "img/card3.png", id: 3 },
+      { src: "img/card4.png", id: 4 },
+      { src: "img/card1.png", id: 5 },
+      { src: "img/card2.png", id: 6 },
+      { src: "img/card3.png", id: 7 },
+      { src: "img/card4.png", id: 8 }
+    ];
+
+    let flippedCards = [];
+    let matchedCards = [];
+    let score = 0;
+    let timeRemaining = 120;  // 2 minutos em segundos (120 segundos)
+    let timerInterval;
+
+    // Função para iniciar a contagem regressiva
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        let minutes = Math.floor(timeRemaining / 60);
+        let seconds = timeRemaining % 60;
+
+        // Atualiza a exibição do timer
+        document.getElementById("timer").innerText = `Tempo restante: ${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        // Quando o tempo acabar, finaliza o jogo
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("O tempo acabou! Fim de jogo.");
+          // Aqui você pode terminar o jogo, por exemplo, desativando as cartas ou exibindo algo.
+        }
+      }, 1000);
+    }
+
+    // Embaralha as cartas aleatoriamente
+    function shuffleCards() {
+      cardsArray.sort(() => Math.random() - 0.5);
+    }
+
+    // Cria as cartas no tabuleiro
+    function createGameBoard() {
+      const gameBoard = document.getElementById("gameBoard");
+
+      cardsArray.forEach(card => {
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.setAttribute("data-id", card.id);
+        
+        const img = document.createElement("img");
+        img.setAttribute("src", card.src);
+        img.setAttribute("alt", "Card");
+        cardElement.appendChild(img);
+
+        cardElement.addEventListener("click", flipCard);
+        gameBoard.appendChild(cardElement);
+      });
+    }
+
+    // Função para virar a carta
+    function flipCard() {
+      const clickedCard = this;
+
+      // Verifica se a carta já foi combinada ou se já está virada
+      if (clickedCard.classList.contains("matched") || clickedCard.classList.contains("flipped") || flippedCards.length === 2) {
+        return;
+      }
+
+      // Adiciona a classe "flipped" para mostrar a imagem
+      clickedCard.classList.add("flipped");
+      flippedCards.push(clickedCard);
+
+      // Se houver duas cartas viradas, verifica se são iguais
+      if (flippedCards.length === 2) {
+        checkForMatch();
+      }
+    }
+
+    // Verifica se as duas cartas viradas são iguais
+    function checkForMatch() {
+      const [card1, card2] = flippedCards;
+
+      // Se as cartas são iguais (compara o src das imagens)
+      if (card1.querySelector("img").src === card2.querySelector("img").src) {
+        card1.classList.add("matched");
+        card2.classList.add("matched");
+        matchedCards.push(card1, card2);
+        flippedCards = [];
+        updateScore(1);  // Atualiza a pontuação quando uma combinação é feita
+
+        // Verifica se o jogo terminou
+        if (matchedCards.length === cardsArray.length) {
+          ganharCard(3); // Ganha o Card 3 (index 2)
+          setTimeout(() => {
+            alert("Você venceu! Parabéns! Você ganhou o Card 3!");
+          }, 500);
+        }
+      } else {
+        setTimeout(() => {
+          card1.classList.remove("flipped");
+          card2.classList.remove("flipped");
+          flippedCards = [];
+        }, 1000);
+      }
+    }
+
+    // Função para atualizar a pontuação
+    function updateScore(points) {
+      score += points;
+      document.getElementById("scoreBoard").innerText = `Pontuação: ${score}`;
+    }
+
+    // Função para armazenar e atualizar o progresso dos cards
+    function ganharCard(cardIndex) {
+      let cardsGanhas = JSON.parse(localStorage.getItem("cardsGanhas")) || [];
+
+      // Verifica se o card já foi ganho
+      if (!cardsGanhas.includes(cardIndex)) {
+        cardsGanhas.push(cardIndex);
+        localStorage.setItem("cardsGanhas", JSON.stringify(cardsGanhas));
+      }
+    }
+
+    // Inicializa o jogo
+    function startGame() {
+      shuffleCards();
+      createGameBoard();
+      startTimer(); // Inicia o timer ao começar o jogo
+    }
+
+    startGame();
+  </script>
+</body>
+
+</html>

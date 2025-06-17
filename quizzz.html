@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Interativo - Conexão Campo e Cidade</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilo CSS -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #4caf50;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .pergunta {
+      font-size: 1.3rem;
+      margin: 20px 0;
+      color: #333;
+      text-align: left;
+    }
+
+    .opcao {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #fff;
+      border: 2px solid #4caf50;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .opcao:hover {
+      background-color: #e8f5e9;
+    }
+
+    .botao {
+      background-color: #4caf50;
+      color: white;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      width: 220px;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .botao:hover {
+      background-color: #45a049;
+    }
+
+    .resultado {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .figurinha {
+      margin-top: 30px;
+      display: none;
+    }
+
+    .voltar {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Quiz Interativo - Mercedes, PR</h1>
+
+    <!-- Pergunta 1 -->
+    <div class="pergunta" id="pergunta1">
+      <p>1. Em que estado brasileiro fica a cidade de Mercedes?</p>
+      <label class="opcao" id="q1-a">
+        <input type="radio" name="q1" value="B" /> Paraná
+      </label>
+      <label class="opcao" id="q1-b">
+        <input type="radio" name="q1" value="A" /> Santa Catarina
+      </label>
+      <label class="opcao" id="q1-c">
+        <input type="radio" name="q1" value="C" /> São Paulo
+      </label>
+      <label class="opcao" id="q1-d">
+        <input type="radio" name="q1" value="D" /> Mato Grosso
+      </label>
+    </div>
+
+    <!-- Pergunta 2 -->
+    <div class="pergunta" id="pergunta2">
+      <p>2. Qual é a principal atividade econômica de Mercedes, PR?</p>
+      <label class="opcao" id="q2-a">
+        <input type="radio" name="q2" value="B" /> Agricultura e Pecuária
+      </label>
+      <label class="opcao" id="q2-b">
+        <input type="radio" name="q2" value="A" /> Turismo
+      </label>
+      <label class="opcao" id="q2-c">
+        <input type="radio" name="q2" value="C" /> Indústria Automotiva
+      </label>
+      <label class="opcao" id="q2-d">
+        <input type="radio" name="q2" value="D" /> Mineração
+      </label>
+    </div>
+
+    <!-- Pergunta 4 -->
+    <div class="pergunta" id="pergunta4">
+      <p>4. Mercedes pertence a qual região do Paraná?</p>
+      <label class="opcao" id="q4-a">
+        <input type="radio" name="q4" value="B" /> Oeste
+      </label>
+      <label class="opcao" id="q4-b">
+        <input type="radio" name="q4" value="A" /> Norte
+      </label>
+      <label class="opcao" id="q4-c">
+        <input type="radio" name="q4" value="C" /> Sudoeste
+      </label>
+      <label class="opcao" id="q4-d">
+        <input type="radio" name="q4" value="D" /> Centro
+      </label>
+    </div>
+
+
+    <!-- Pergunta 6 -->
+    <div class="pergunta" id="pergunta6">
+      <p>6. Qual é o nome do principal evento cultural que acontece em Mercedes?</p>
+      <label class="opcao" id="q6-a">
+        <input type="radio" name="q6" value="C" /> Café Colonial
+      </label>
+      <label class="opcao" id="q6-b">
+        <input type="radio" name="q6" value="A" /> Festa do Pinhão
+      </label>
+      <label class="opcao" id="q6-c">
+        <input type="radio" name="q6" value="B" /> Festa da Uva
+      </label>
+      <label class="opcao" id="q6-d">
+        <input type="radio" name="q6" value="D" /> Festa do Peão
+      </label>
+    </div>
+
+    <!-- Pergunta 7 -->
+    <div class="pergunta" id="pergunta7">
+      <p>7. Qual é a população aproximada de Mercedes, PR?</p>
+      <label class="opcao" id="q7-a">
+        <input type="radio" name="q7" value="B" /> 6 mil habitantes
+      </label>
+      <label class="opcao" id="q7-b">
+        <input type="radio" name="q7" value="A" /> 8 mil habitantes
+      </label>
+      <label class="opcao" id="q7-c">
+        <input type="radio" name="q7" value="C" /> 25 mil habitantes
+      </label>
+      <label class="opcao" id="q7-d">
+        <input type="radio" name="q7" value="D" /> 50 mil habitantes
+      </label>
+    </div>
+
+    <!-- Pergunta 8 -->
+    <div class="pergunta" id="pergunta8">
+      <p>8. Mercedes, PR, é conhecida por sua forte ligação com qual grupo étnico?</p>
+      <label class="opcao" id="q8-a">
+        <input type="radio" name="q8" value="B" /> Alemã
+      </label>
+      <label class="opcao" id="q8-b">
+        <input type="radio" name="q8" value="A" /> Italiana
+      </label>
+      <label class="opcao" id="q8-c">
+        <input type="radio" name="q8" value="C" /> Polonesa
+      </label>
+      <label class="opcao" id="q8-d">
+        <input type="radio" name="q8" value="D" /> Japonesa
+      </label>
+    </div>
+
+    <!-- Pergunta 9 -->
+    <div class="pergunta" id="pergunta9">
+      <p>9. Qual rodovia passa próxima à cidade de Mercedes, facilitando o acesso?</p>
+      <label class="opcao" id="q9-a">
+        <input type="radio" name="q9" value="C" /> PR-163
+      </label>
+      <label class="opcao" id="q9-b">
+        <input type="radio" name="q9" value="A" /> BR-277
+      </label>
+      <label class="opcao" id="q9-c">
+        <input type="radio" name="q9" value="B" /> BR-369
+      </label>
+      <label class="opcao" id="q9-d">
+        <input type="radio" name="q9" value="D" /> BR-116
+      </label>
+    </div>
+
+
+    <!-- Botão para calcular resultado -->
+    <button class="botao" onclick="calcularResultado()">Ver Resultado</button>
+
+    <!-- Resultado -->
+    <div class="resultado" id="resultado"></div>
+
+    <!-- Figurinha de prêmio -->
+    <div class="figurinha" id="figurinha">
+      <img src="https://via.placeholder.com/150?text=Parab%C3%A9ns!" alt="Figurinha de Prêmio" />
+    </div>
+
+    <!-- Botão Voltar -->
+    <a href="figurinhas.html" class="voltar">Voltar</a>
+  </div>
+
+  <script>
+    function calcularResultado() {
+      let score = 0;
+
+      // Respostas corretas
+      let respostasCorretas = {
+        q1: 'B', // Paraná
+        q2: 'B', // Agricultura e Pecuária
+        q4: 'B', // Oeste
+        q6: 'C', // Café Colonial
+        q7: 'B', // 6 mil habitantes
+        q8: 'B', // Alemã
+        q9: 'C', // Br- 163
+
+      };
+
+      // Verificar respostas
+      for (let i = 1; i <= 10; i++) {
+        let respostaSelecionada = document.querySelector(`input[name="q${i}"]:checked`);
+        if (respostaSelecionada) {
+          if (respostaSelecionada.value === respostasCorretas[`q${i}`]) {
+            score++;
+          }
+        }
+      }
+
+      // Mostrar resultado
+      let resultado = '';
+      if (score === 10) {
+        resultado = 'Parabéns! Você acertou todas as questões!';
+        document.getElementById("figurinha").style.display = "block";
+      } else if (score >= 6) {
+        resultado = `Você acertou ${score} de 10! Bom trabalho, continue assim!`;
+        document.getElementById("figurinha").style.display = "none";
+      } else {
+        resultado = `Você acertou ${score} de 10. Tente mais uma vez!`;
+        document.getElementById("figurinha").style.display = "none";
+      }
+
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+
+</html>

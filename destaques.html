@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Destaques de Mercedes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --verde-principal: #3B6E22;
+      --verde-claro: #A4C639;
+      --marrom-suave: #6E4B2A;
+      --bege-fundo: #F2E9DC;
+      --branco: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--bege-fundo);
+      font-family: 'Josefin Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    h2.section-title {
+      color: var(--verde-principal);
+      font-weight: 700;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--verde-claro);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Botão Voltar */
+    .btn-voltar {
+      display: inline-block;
+      margin: 1.5rem auto 2rem;
+      padding: 10px 20px;
+      background-color: var(--verde-principal);
+      color: var(--branco);
+      font-weight: 700;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      font-size: 1rem;
+      border: none;
+    }
+    .btn-voltar:hover,
+    .btn-voltar:focus {
+      background-color: var(--verde-claro);
+      color: #222;
+      text-decoration: none;
+      outline: none;
+    }
+
+    /* Cards */
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-img {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .card-title {
+      color: var(--verde-principal);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .btn-verde {
+      background-color: var(--verde-principal);
+      color: var(--branco);
+      font-weight: 600;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-verde:hover {
+      background-color: var(--verde-claro);
+      color: #222;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="container py-5">
+    <h2 class="section-title">Destaques de Mercedes</h2>
+
+    <div class="text-center">
+      <button class="btn-voltar" onclick="history.back()">← Voltar</button>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <!-- Card Eventos Destaque -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/eventos-destaque.jpg" alt="Eventos Destaque" />
+            </div>
+            <h5 class="card-title">Eventos Destaque</h5>
+            <p class="card-text">Mercedes é palco de eventos incríveis durante o ano. Conheça os principais eventos da cidade!</p>
+            <a href="eventos-destaque.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Mis Mercedes -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/mis-mercedes.jpg" alt="Mis Mercedes" />
+            </div>
+            <h5 class="card-title">Mis Mercedes</h5>
+            <p class="card-text">O concurso de beleza que revela as mais belas mulheres da cidade. Acompanhe as candidatas!</p>
+            <a href="mis-mercedes.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Atletas Destaques -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/atletas-destaques.jpg" alt="Atletas Destaques" />
+            </div>
+            <h5 class="card-title">Atletas Destaques</h5>
+            <p class="card-text">Conheça os atletas que se destacam e fazem a diferença em suas modalidades!</p>
+            <a href="atletas-destaques.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Alunas Destaques -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/alunas-destaques.jpg" alt="Alunas Destaques" />
+            </div>
+            <h5 class="card-title">Alunas Destaques</h5>
+            <p class="card-text">As alunas que se destacam em diversas áreas acadêmicas e extra-curriculares.</p>
+            <a href="alunas-destaques.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Profissionais Destaques -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/profissionais-destaques.jpg" alt="Profissionais Destaques" />
+            </div>
+            <h5 class="card-title">Profissionais Destaques</h5>
+            <p class="card-text">Profissionais que fazem a diferença em suas áreas, contribuindo para o crescimento de Mercedes.</p>
+            <a href="profissionais-destaques.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Projetos Destaques -->
+      <div class="col">
+        <div class="card h-100 p-3">
+          <div class="card-body">
+            <div class="card-img">
+              <img src="img/projetos-destaques.jpg" alt="Projetos Destaques" />
+            </div>
+            <h5 class="card-title">Projetos Destaques</h5>
+            <p class="card-text">Projetos inovadores que estão transformando a cidade e melhorando a qualidade de vida dos moradores.</p>
+            <a href="projetos-destaques.html" class="btn-verde">📍 Ver mais</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

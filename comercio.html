@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comércios Locais - Rota Rural Mercedes</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --verde-escuro: #3B6E22;
+      --verde-claro: #A4C639;
+      --fundo: #F2F2F2;
+      --branco: #ffffff;
+      --cinza: #666666;
+      --fonte: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte);
+      background-color: var(--fundo);
+      color: var(--verde-escuro);
+    }
+
+    h2 {
+      font-weight: 700;
+      color: var(--verde-escuro);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      color: var(--verde-escuro);
+      font-weight: bold;
+    }
+
+    .card-text {
+      color: var(--cinza);
+    }
+
+    .btn-mapa {
+      background-color: var(--verde-claro);
+      color: var(--branco);
+      font-weight: 600;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.75rem;
+    }
+
+    .btn-mapa:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+
+    .btn-voltar {
+      background-color: var(--verde-claro);
+      color: var(--branco);
+      font-weight: 600;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-voltar:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: var(--verde-escuro);
+      color: var(--branco);
+      text-align: center;
+      font-size: 14px;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<section class="container my-5">
+  <h2>🛒 Comércios Locais</h2>
+
+  <div class="text-center mb-4">
+    <a href="javascript:history.back()" class="btn-voltar">← Voltar</a>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Roseli Francener -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/roseli.jpg" alt="Roseli Francener & Cia Ltda" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Roseli Francener & Cia Ltda</h5>
+          <p class="card-text">Minimercado localizado na Vila Três Irmãs...</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Roseli+Francener+%26+Cia+Ltda+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Memagril -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/memagril.jpg" alt="Memagril" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Memagril - Mercedes Máquinas Agrícolas Ltda</h5>
+          <p class="card-text">Comércio de máquinas e equipamentos agrícolas...</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Memagril+Mercedes+Máquinas+Agrícolas+Ltda+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agromar -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/agromar.jpg" alt="Agromar Mecânica" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Agromar Mecânica e Peças Agrícolas</h5>
+          <p class="card-text">Serviços de mecânica e venda de peças para máquinas agrícolas.</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Agromar+Mecânica+e+Peças+Agrícolas+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto Peças -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/autopecas.jpg" alt="Auto Peças Mercedes" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Auto Peças Mercedes (Vilmar Schaab & Cia Ltda)</h5>
+          <p class="card-text">Peças automotivas para veículos urbanos e rurais.</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Auto+Peças+Mercedes+Vilmar+Schaab+%26+Cia+Ltda+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centro Automotivo -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/centroautomotivo.jpg" alt="Centro Automotivo Mercedes" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Centro Automotivo Mercedes (Fiedler & Fiedler Ltda)</h5>
+          <p class="card-text">Serviços de manutenção e reparo de veículos e tratores.</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Centro+Automotivo+Mercedes+Fiedler+%26+Fiedler+Ltda+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Donato Refrigeração -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/donato.jpg" alt="Donato Refrigeração / Solar Loja" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Donato Refrigeração / Solar Loja</h5>
+          <p class="card-text">Soluções em refrigeração e energia solar para o campo.</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Donato+Refrigeração+Solar+Loja+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Costa Oeste Panificadora -->
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="mb-3">
+            <img src="img/costaoeste.jpg" alt="Costa Oeste Panificadora" class="img-fluid rounded" />
+          </div>
+          <h5 class="card-title">Costa Oeste Panificadora e Confeitaria</h5>
+          <p class="card-text">Pães e confeitos frescos para a comunidade local.</p>
+          <a class="btn-mapa" href="https://www.google.com/maps?q=Costa+Oeste+Panificadora+Mercedes+PR" target="_blank" rel="noopener noreferrer">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Rota Rural Mercedes | Desenvolvido por Taynara Hasckel</p>
+  <p>Av. João XXIII, Mercedes - PR, Brasil | (45) 98840-0734</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

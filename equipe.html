@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Equipe - Rota Rural</title>
+
+  <!-- Fontes e estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-escuro: #3A5A40;
+      --verde-medio: #588157;
+      --verde-claro: #A3B18A;
+      --bege-claro: #FEFAE0;
+      --bege-medio: #EDE5C1;
+      --texto-principal: #2D332C;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      color: var(--texto-principal);
+      background-color: var(--bege-claro);
+    }
+
+    .fundo-equipe {
+      background-image: url('img/equipe.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2em;
+      background-color: rgba(58, 90, 64, 0.4);
+      background-blend-mode: darken;
+    }
+
+    .conteudo {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2em;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 100%;
+      color: var(--texto-principal);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 1em;
+      color: var(--verde-escuro);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--texto-principal);
+    }
+
+    .imagem-equipe {
+      max-width: 100%;       
+      height: auto;
+      border-radius: 10px;
+      border: 4px solid var(--verde-claro);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: block;       
+      margin: 1.5em auto 1.5em auto; 
+      box-sizing: border-box; 
+    }
+
+    a.voltar {
+      display: inline-block;
+      margin-top: 2em;
+      padding: 0.8em 1.5em;
+      background-color: var(--verde-medio);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    a.voltar:hover {
+      background-color: var(--verde-escuro);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="fundo-equipe">
+    <div class="conteudo">
+      <h1>Nossa Equipe</h1>
+      <p>
+        A equipe da Rota Rural Mercedes é formada por profissionais apaixonados por turismo, agricultura e cultura local.
+        Trabalhamos para conectar o campo à cidade com informações úteis, acolhimento e experiências autênticas.
+      </p>
+
+      <!-- Imagem da equipe - AGORA DENTRO DO QUADRADO -->
+      <img src="img/foto-equipe.png" alt="Foto da equipe Rota Rural" class="imagem-equipe" />
+
+      <p>
+        Entre em contato conosco e saiba como podemos ajudar na sua jornada pela Rota Rural.
+      </p>
+      <a href="vermais.html" class="voltar">Voltar</a>
+    </div>
+  </section>
+</body>
+
+</html>

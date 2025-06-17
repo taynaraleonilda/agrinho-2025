@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Rota Rural</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    .descricao__titulo {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 56px;
+      color: #3A6351;
+      margin-bottom: 0.6em;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .descricao__texto {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5c8946;
+      text-align: justify;
+      padding: 0 1em;
+    }
+
+    .container__descricao {
+      text-align: center;
+      padding: 2em;
+    }
+
+    .logo__topo {
+      background-color: #2f4f3a;
+      padding: 0.5em 1em;
+    }
+
+    .logo__topo img {
+      height: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .descricao__titulo {
+        font-size: 42px;
+      }
+    }
+
+    /* Estilo para o botão de voltar */
+    .botao-voltar {
+      background-color: #558b2f;
+      color: white;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 2em;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-voltar:hover {
+      background-color: #4a6b3d;
+    }
+
+    /* Novo estilo para o botão "Conheça a nossa equipe" */
+    .btn-equipe {
+      background-color: #3A6351;
+      color: white;
+      font-size: 1.2em;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 20px;
+    }
+
+    .btn-equipe:hover {
+      background-color: #2f4f3a;
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Botão para voltar -->
+  <div style="text-align: center;">
+    <a href="servicos.html" class="botao-voltar">← Voltar</a>
+  </div>
+  
+  <!-- NOSSO SITE -->
+  <section class="container secundario">
+    <img src="img/mercedes1.png" alt="Colheita da uva" class="secundario__imagem" />
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Nosso site</h2>
+      <p class="descricao__texto">
+        O site da Rota Rural Mercedes é uma plataforma digital criada com o intuito de conectar a cidade de Mercedes ao público local e aos visitantes. O objetivo é celebrar a conexão entre o campo e a cidade, destacando as tradições e os elementos culturais que tornam a cidade única. A plataforma visa promover o turismo rural, valorizar a história local e fortalecer a economia regional.
+        <br /><br />
+        O site oferece um guia completo sobre os pontos turísticos da cidade e da região, como suas festas típicas, belezas naturais, gastronomia e os comerciantes locais. Ele também conta a história de Mercedes, oferecendo aos visitantes uma viagem no tempo, desde as suas origens até o presente, mostrando como o campo e a cidade se entrelaçam e se influenciam mutuamente.
+        <br /><br />
+        A Rota Rural Mercedes é também um lugar onde as famílias podem se conectar, com uma Área Kids onde as crianças podem explorar a cultura rural de maneira lúdica e educativa. Além disso, ao promover eventos e festas, o site celebra a fusão das tradições rurais e urbanas, criando um ambiente festivo e acolhedor para todos.
+        <br /><br />
+        Convidamos você a explorar o site e descobrir o que faz Mercedes tão especial. Venha fazer parte dessa experiência autêntica, onde o campo recebe a cidade de braços abertos.
+      </p>
+      <a href="equipe.html" class="btn-equipe">Conheça a nossa equipe</a>
+    </div>
+  </section>
+
+ <!-- COMO USAR -->
+<section class="container secundario">
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Como usar?</h2>
+      <p class="descricao__texto">
+        Após o login, você terá acesso ao menu principal, onde poderá explorar as diferentes seções da Rota Rural:
+        <ul>
+          <li><strong>Lazer</strong>: Descubra as atividades de lazer e entretenimento na cidade e região.</li>
+          <li><strong>Comércio</strong>: Conheça os comerciantes locais e descubra os produtos regionais.</li>
+          <li><strong>Lanchonetes</strong>: Explore as opções de alimentação e sabores típicos da nossa terra.</li>
+          <li><strong>Pontos Turísticos</strong>: Encontre os lugares imperdíveis para visitar, com informações sobre cada atração.</li>
+        </ul>
+        Cada seção exibe locais recomendados, apresentados em cartões interativos com imagens, descrições detalhadas e links para facilitar sua navegação e localização.
+        <br /><br />
+        A plataforma é um convite para celebrar a união entre o campo e a cidade, conectando tradições, sabores, cultura e hospitalidade. Ao explorar a Rota Rural, você perceberá como essas duas realidades se entrelaçam e enriquecem o cotidiano de todos.
+      </p>
+    </div>
+    <img src="img/mercedes2.png" alt="Produtor segurando um tablet" class="secundario__imagem" />
+  </section>
+  
+
+ <!-- AGRADECIMENTO -->
+<section class="container secundario">
+    <img src="img/mercedes3.png" alt="Colheitadeira despejando sementes" class="secundario__imagem" />
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">🌿 Obrigado por visitar a Rota Rural Mercedes!</h2>
+      <p class="descricao__texto">
+        Esperamos que sua experiência tenha sido enriquecedora e que você tenha conhecido um pouco mais da beleza,
+        cultura e diversidade que unem o campo e a cidade. Ao celebrar essa conexão, valorizamos não apenas os
+        alimentos que chegam à nossa mesa, mas também as histórias, saberes e modos de vida que brotam da terra e se
+        entrelaçam com a vida urbana.
+        <br /><br />
+        Continue explorando, compartilhando e valorizando o que é nosso. A natureza, as tradições e a hospitalidade
+        da nossa gente do interior às metrópoles esperam por você de braços abertos.
+        <br /><br />
+        Até a próxima visita! 🌾
+      </p>
+    </div>
+  </section>
+  
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <ul class="rodape_lista">
+      <li class="lista_link"><a href="#">Idioma</a></li>
+      <li class="lista_link"><a href="#">Política de privacidade</a></li>
+      <li class="lista_link"><a href="#">Proteção de dados no Brasil</a></li>
+      <li class="lista_link"><a href="#">Ajuda</a></li>
+    </ul>
+    <p class="rodape_texto">
+      ® 2025 Rota Rural. Todos os direitos reservados. Serviço de assinatura gratuita. Conteúdo sujeito a disponibilidade.
+    </p>
+
+    <p class="rodape_texto">
+      Rota Rural Mercedes - Conectando o Campo e a Cidade.<br />
+      Projeto gratuito, baseado em assinatura, com acesso fácil a informações sobre turismo rural, comércio local e cultura.<br /><br />
+      Endereço: Av. João XXIII, Mercedes - PR, Brasil<br />
+      Contato: (45) 99951-3619
+    </p>
+  </footer>
+
+</body>
+
+</html>

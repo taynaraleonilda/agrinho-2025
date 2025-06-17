@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rota Rural Mercedes - Jogos e Álbum de Figurinhas</title>
+
+  <!-- Fontes e Estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3.5em;
+      font-weight: 700;
+      color: #3A6351;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .album-container {
+      width: 80%;
+      max-width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .figurinha-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 230px;
+      text-align: center;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .figurinha-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .figurinha-card img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      height: 150px;
+    }
+
+    .figurinha-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5em;
+      color: #3A6351;
+      margin-top: 10px;
+    }
+
+    .figurinha-card p {
+      font-size: 1em;
+      color: #6B6B6B;
+      margin-top: 5px;
+    }
+
+    .botao-voltar {
+      padding: 12px 30px;
+      background-color: #3A6351;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 40px;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .botao-voltar:hover {
+      background-color: #2b4d35;
+      transform: translateY(-5px);
+    }
+
+    .botao-voltar:active {
+      transform: translateY(0);
+    }
+
+    .jogos__cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .jogos__card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      transform: scale(1);
+    }
+
+    .jogos__card:hover {
+      transform: scale(1.05);
+    }
+
+    .jogos__card-imagem {
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .jogos__card-titulo {
+      font-family: 'Cinzel', serif;
+      font-size: 2em;
+      color: #3A6351;
+      margin: 15px 0;
+      text-transform: capitalize;
+    }
+
+    .jogos__card-texto {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2em;
+      color: #6B6B6B;
+      margin-bottom: 15px;
+    }
+
+    .botao {
+      padding: 12px 25px;
+      background-color: #3A6351;
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 25px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .botao:hover {
+      background-color: #2b4d35;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Álbum de Figurinhas - Rota Rural Mercedes</h1>
+
+  <!-- Exibição das Figurinhas -->
+  <div class="album-container" id="figurinhaContainer">
+    <!-- As figurinhas vão ser inseridas dinamicamente aqui -->
+  </div>
+<!-- Cards de Jogos -->
+<section class="jogos__cards">
+  <div class="jogos__card">
+    <h3 class="jogos__card-titulo">Cruzadinha</h3>
+    <p class="jogos__card-texto">Teste seus conhecimentos sobre a Rota Rural Mercedes com uma divertida cruzadinha!</p>
+    <a href="cruzadinha.html" class="botao">Jogar</a>
+  </div>
+
+  <div class="jogos__card">
+    <h3 class="jogos__card-titulo">Quiz Interativo</h3>
+    <p class="jogos__card-texto">Participe do nosso quiz e descubra quanto você realmente sabe sobre a história e cultura de Mercedes!</p>
+    <a href="quizzz.html" class="botao">Jogar</a>
+  </div>
+
+  <div class="jogos__card">
+    <h3 class="jogos__card-titulo">Jogo da Memória</h3>
+    <p class="jogos__card-texto">Desafie sua memória com imagens e símbolos da nossa cultura local.</p>
+    <a href="memoria.html" class="botao">Jogar</a>
+  </div>
+
+  <div class="jogos__card">
+    <h3 class="jogos__card-titulo">Enigma Rural</h3>
+    <p class="jogos__card-texto">Resolva os enigmas rurais e descubra mais sobre os segredos da nossa região!</p>
+    <a href="enigma.html" class="botao">Jogar</a>
+  </div>
+
+
+
+  <a href="kids.html" class="botao-voltar">Voltar /a>
+
+  <script>
+    // Lista de figurinhas disponíveis com imagens locais
+    const figurinhas = [
+      { src: "img/figurinha1.png", nome: "Figurinha 1", descricao: "Descrição da figurinha 1" },
+      { src: "img/figurinha2.png", nome: "Figurinha 2", descricao: "Descrição da figurinha 2" },
+      { src: "img/figurinha3.png", nome: "Figurinha 3", descricao: "Descrição da figurinha 3" },
+      { src: "img/figurinha4.png", nome: "Figurinha 4", descricao: "Descrição da figurinha 4" },
+    ];
+
+    // Armazenamento local das figurinhas do jogador
+    let figurinhasGanhas = JSON.parse(localStorage.getItem("figurinhasGanhas")) || [];
+
+    // Função para atualizar o álbum com as figurinhas ganhas
+    function atualizarAlbum() {
+      const figurinhaContainer = document.getElementById("figurinhaContainer");
+      figurinhaContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+      // Exibe as figurinhas ganhas
+      figurinhas.forEach((figurinha, index) => {
+        const figurinhaCard = document.createElement('div');
+        figurinhaCard.classList.add('figurinha-card');
+
+        const figurinhaImage = document.createElement('img');
+        figurinhaImage.src = figurinha.src;
+        figurinhaCard.appendChild(figurinhaImage);
+
+        const figurinhaTitle = document.createElement('h3');
+        figurinhaTitle.textContent = figurinha.nome;
+        figurinhaCard.appendChild(figurinhaTitle);
+
+        const figurinhaDesc = document.createElement('p');
+        figurinhaDesc.textContent = figurinha.descricao;
+        figurinhaCard.appendChild(figurinhaDesc);
+
+        // Verifica se a figurinha foi ganha
+        if (figurinhasGanhas.includes(index)) {
+          figurinhaCard.style.border = '5px solid #3A6351';
+        }
+
+        figurinhaContainer.appendChild(figurinhaCard);
+      });
+    }
+
+    // Chama a função para atualizar o álbum ao carregar a página
+    atualizarAlbum();
+  </script>
+</body>
+
+</html>

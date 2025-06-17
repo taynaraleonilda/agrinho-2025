@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIDS - Rota Rural Mercedes</title>
+
+  <!-- Fontes e Estilos -->
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Estilo para os títulos com a nova fonte */
+    .descricao__titulo {
+      font-family: 'Cinzel', serif;
+      font-size: 4em;
+      font-weight: 700;
+      color: #3A6351;
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Estilo para o texto */
+    .descricao__texto {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5em;
+      color: #6B6B6B;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* Estilo para os botões "Ver mais" */
+    .botao {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #558b2f;
+      color: white;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .botao:hover {
+      background-color: #4a6b3d;
+      transform: translateY(-5px);
+    }
+
+    .botao:active {
+      transform: translateY(0);
+    }
+
+    /* Barra de navegação - Alinhar à esquerda */
+    nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 50px 0;
+      position: relative;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      background-color: #558b2f;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    nav a:hover {
+      background-color: #4a6b3d;
+    }
+
+    nav a:active {
+      transform: translateY(0);
+    }
+
+    /* Estilo para o mascote */
+    .mascote-container {
+      text-align: center;
+      margin-top: 30px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .mascote-img {
+      max-width: 400px;
+      height: auto;
+      border: 8px solid #24a132;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .mascote-img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .mascote-container:hover .mascote-img {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Carrossel */
+    .carrossel {
+      background-color: #F2E9DC;
+      padding: 30px 0;
+    }
+
+    .carrossel__titulo {
+      color: #3A6351;
+      text-align: center;
+      font-size: 2.5em;
+    }
+
+    .descricao__carrossel {
+      color: #6B6B6B;
+      font-size: 1.5em;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .carrossel__container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Ajustando tamanho das imagens para o layout ser mais uniforme */
+    .secundario__imagem {
+      width: 100%;
+      height: 450px; /* Aumentando ainda mais a altura das imagens */
+      object-fit: cover; /* Garante que a imagem não distorça */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .secundario__imagem:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilos para os botões de navegação do carrossel */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #3A6351;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 2em;
+      transition: background-color 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background-color: #24a132;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barra de navegação verde -->
+  <div style="background-color: #3A6351; padding: 50px 0; position: relative;">
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="feedback.html">Feedback</a>
+        </li>
+        <li>
+          <a href="perfil.html">Perfil</a>
+        </li>
+        <li>
+          <a href="servicos.html">Serviços</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Div para o Mascote da Rota Rural -->
+  <div class="mascote-container">
+    <img src="img/mascote.png" alt="Mascote da Rota Rural" class="mascote-img" />
+  </div>
+
+  <!-- Tópico: Esportes para Crianças -->
+  <section class="container secundario">
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Esportes para Crianças</h2>
+      <p class="descricao__texto">Aqui você encontra atividades e jogos de esportes ideais para crianças. Divirta-se praticando futebol, vôlei, e muito mais!</p>
+      <a href="esportes.html" class="botao">Ver mais</a>
+    </div>
+    <img src="img/esportes.png" alt="Esportes para crianças" class="secundario__imagem" />
+  </section>
+
+  <!-- Tópico: Lazer para Crianças -->
+  <section class="container secundario" style="background-color: #F2E9DC;">
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Lazer para Crianças</h2>
+      <p class="descricao__texto">Explore áreas verdes, parques e atividades ao ar livre feitas especialmente para a diversão dos pequenos!</p>
+      <a href="lazer-criancas.html" class="botao">Ver mais</a>
+    </div>
+    <img src="img/lazer-criancas.png" alt="Lazer para Crianças" class="secundario__imagem" />
+  </section>
+
+  <!-- Tópico: Vídeos Educativos -->
+  <section class="container secundario" style="background-color: #F2E9DC;">
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Vídeos Educativos</h2>
+      <p class="descricao__texto">Assista vídeos educativos sobre a história de Mercedes, cultura local, e muito mais! Aprenda e se divirta ao mesmo tempo.</p>
+      <a href="videos.html" class="botao">Ver mais</a>
+    </div>
+    <img src="img/videos.png" alt="Vídeos Educativos" class="secundario__imagem" />
+  </section>
+
+  <!-- Tópico: Figurinhas Colecionáveis -->
+  <section class="container secundario" style="background-color: #F2E9DC;">
+    <div class="container__descricao">
+      <h2 class="descricao__titulo">Figurinhas Colecionáveis</h2>
+      <p class="descricao__texto">Conclua tarefas e ganhe figurinhas para colecionar! Quanto mais tarefas você completar, mais figurinhas você ganha.</p>
+      <a href="figurinhas.html" class="botao">Ver mais</a>
+    </div>
+    <img src="img/figurinhas.png" alt="Figurinhas Colecionáveis" class="secundario__imagem" />
+  </section>
+
+  <!-- Carrossel de atividades em destaque -->
+  <section class="carrossel">
+    <h2 class="carrossel__titulo">Atividades em Destaque</h2>
+    <p class="descricao__carrossel">Explore diversas atividades que a Rota Rural oferece para as crianças. A diversão está garantida!</p>
+
+    <div class="carrossel__container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/atividade1.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade2.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade3.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade4.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade5.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade6.png" /></div>
+          <div class="swiper-slide"><img src="img/atividade7.png" /></div>
+        </div>
+        <!-- Adicionando botões de navegação -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      slidesPerView: 2,  /* Ajustando para 2 imagens por vez */
+      spaceBetween: 30,  /* Aumentando o espaço entre as imagens */
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+
+</html>

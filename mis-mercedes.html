@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>História - Eduarda Van de Sand Zimmer</title>
+
+  <!-- Fontes e Swiper -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --branco-principal: #FFFFFF;
+      --cinza-secundario: #555555;
+      --botao-verde: #3B6E22;
+      --botao-verde-escuro: #2E5319;
+      --rodape-fundo: #6E4B2A;
+      --botao-ativo: #A4C639;
+      --cor-de-fundo: #F9F7F1;
+      --preto-escuro: #3B6E22;
+      --fonte-principal: 'Josefin Sans', sans-serif;
+      --sombra: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cor-de-fundo);
+      color: var(--preto-escuro);
+      font-family: var(--fonte-principal);
+      margin: 0;
+      padding: 0 1.5em;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: url('img/fundo-personalizado.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: -1;
+    }
+
+    header {
+      background-color: var(--botao-verde);
+      padding: 1em 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px var(--sombra);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--branco-principal);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--botao-ativo);
+      border-bottom-color: var(--botao-ativo);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 3em auto 5em;
+      padding: 2em 2.5em;
+      background: var(--branco-principal);
+      border-radius: 12px;
+      box-shadow: 0 6px 15px var(--sombra);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5em;
+      color: var(--botao-verde);
+      text-align: center;
+      text-shadow: 1px 1px 2px var(--botao-verde-escuro);
+    }
+
+    h2 {
+      color: var(--botao-ativo);
+      margin-top: 2em;
+      font-weight: 700;
+      border-left: 6px solid var(--botao-verde);
+      padding-left: 12px;
+      margin-bottom: 0.8em;
+    }
+
+    p {
+      font-size: 1.15rem;
+      margin-bottom: 1.3em;
+      color: var(--cinza-secundario);
+    }
+
+    strong {
+      color: var(--botao-verde);
+      font-weight: 700;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--botao-verde-escuro);
+    }
+
+    .swiper {
+      margin-top: 3em;
+      padding-bottom: 3em;
+    }
+
+    .swiper-slide {
+      background: var(--botao-verde);
+      color: var(--branco-principal);
+      border-radius: 12px;
+      padding: 1.8em 2em;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .slide-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .slide-text {
+      font-size: 1rem;
+      color: #dce5d3;
+      line-height: 1.4;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--botao-verde-escuro);
+    }
+
+    .swiper-pagination-bullet {
+      background: var(--botao-verde-escuro);
+      opacity: 0.6;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--botao-ativo);
+      opacity: 1;
+    }
+
+    footer {
+      background-color: var(--rodape-fundo);
+      color: var(--branco-principal);
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px var(--sombra);
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+      .swiper-slide img {
+        max-height: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" aria-label="Ir para a página inicial"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Eduarda Van de Sand Zimmer - Miss Paraná</h1>
+
+    <p><strong>Uma Jovem Mercedense que Brilhou no Mundo da Beleza</strong></p>
+
+    <p>Eduarda Van de Sand Zimmer é um nome que ficou gravado na história de Mercedes e do estado do Paraná ao conquistar o título de <strong>Miss Paraná</strong>, sendo a primeira mulher de Mercedes a alcançar essa grande conquista. Sua trajetória inspiradora e seu brilho natural a tornaram uma referência de beleza e determinação.</p>
+
+    <p>A história de Eduarda começou na pequena cidade de Mercedes, onde desde jovem se destacou pela sua elegância, simpatia e presença de palco. Ela sempre foi muito envolvida com atividades culturais e sociais da cidade, e desde cedo se interessou pelos concursos de beleza.</p>
+
+    <p>Em 2022, após passar por várias etapas seletivas, Eduarda participou do concurso <strong>Miss Paraná</strong>, em Curitiba, onde demonstrou não apenas sua beleza física, mas também sua inteligência, educação e graça, características que a destacaram entre as demais participantes. Ao vencer o título, Eduarda não apenas representou sua cidade natal, mas também se tornou um exemplo de empoderamento feminino.</p>
+
+    <p>Eduarda acredita que sua vitória é um reflexo da força das mulheres de sua cidade e de todas as mulheres do Paraná. Ela também busca usar sua plataforma para promover causas importantes, como a valorização da autoestima e o incentivo à participação feminina em diferentes esferas da sociedade.</p>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper" aria-label="Linha do tempo da história de Eduarda Van de Sand Zimmer">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="img/eduarda-infancia.jpg" alt="Eduarda na infância" />
+          <div class="slide-title">Infância em Mercedes</div>
+          <div class="slide-text">
+            Desde muito jovem, Eduarda se destacava pela sua elegância e simpatia nas atividades culturais e sociais de Mercedes.
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="img/eduarda-miss-parana.jpg" alt="Eduarda como Miss Paraná" />
+          <div class="slide-title">Conquista do Miss Paraná</div>
+          <div class="slide-text">
+            Em 2022, Eduarda se tornou a primeira mulher de Mercedes a ganhar o título de Miss Paraná, destacando-se pela sua beleza e inteligência.
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="img/eduarda-causa-social.jpg" alt="Eduarda promovendo causas sociais" />
+          <div class="slide-title">Promoção de Causas Sociais</div>
+          <div class="slide-text">
+            Após a conquista, Eduarda tem utilizado sua visibilidade para promover causas importantes, como a autoestima feminina e a participação das mulheres em diferentes setores.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-next" aria-label="Próximo slide"></div>
+      <div class="swiper-button-prev" aria-label="Slide anterior"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Rota Rural Mercedes. Todos os direitos reservados.
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      keyboard: {
+        enabled: true
+      },
+      a11y: {
+        enabled: true
+      }
+    });
+  </script>
+</body>
+</html>

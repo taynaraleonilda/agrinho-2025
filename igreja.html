@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Igrejas e Espaços Comunitários</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --verde-escuro: #3B6E22;
+      --verde-claro: #A4C639;
+      --fundo: #F2F2F2;
+      --branco: #ffffff;
+      --cinza: #666666;
+      --fonte: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte);
+      background-color: var(--fundo);
+      color: var(--verde-escuro);
+    }
+
+    h2 {
+      font-weight: 700;
+      color: var(--verde-escuro);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    /* Botões verdes bonitos */
+    .btn-verde {
+      background-color: var(--verde-claro);
+      color: var(--branco);
+      font-weight: 600;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-verde:hover {
+      background-color: var(--verde-escuro);
+      color: #fff;
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      color: var(--verde-escuro);
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .card-text {
+      color: var(--cinza);
+    }
+
+    /* Espaço reservado para as imagens */
+    .card-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #d9e6c9; /* tom verde claro bem suave */
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: var(--verde-escuro);
+      color: var(--branco);
+      text-align: center;
+      font-size: 14px;
+      padding: 1rem 0;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<section class="container my-5">
+  <h2>⛪ Igrejas e Espaços Comunitários</h2>
+
+  <!-- Botão Voltar -->
+  <div class="text-center my-4">
+    <a href="javascript:history.back()" class="btn-verde">← Voltar</a>
+  </div>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="card-img">
+            <img src="img/paróquia-nossa-senhora-aparecida.jpg" alt="Paróquia Nossa Senhora Aparecida" />
+          </div>
+          <h5 class="card-title">Paróquia Nossa Senhora Aparecida</h5>
+          <p class="card-text">Igreja católica central, com forte presença na comunidade.</p>
+          <a href="https://www.google.com/maps/search/Paróquia+Nossa+Senhora+Aparecida+Mercedes+PR" target="_blank" class="btn-verde">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="card-img">
+            <img src="img/igreja-evangelica-verbo-da-vida.jpg" alt="Igreja Evangélica Verbo da Vida" />
+          </div>
+          <h5 class="card-title">Igreja Evangélica Verbo da Vida</h5>
+          <p class="card-text">Ativa na cidade, promovendo eventos e atividades comunitárias.</p>
+          <a href="https://www.google.com/maps/search/Igreja+Evangélica+Verbo+da+Vida+Mercedes+PR" target="_blank" class="btn-verde">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="card-img">
+            <img src="img/ieclb-paróquia-de-mercedes.jpg" alt="IECLB – Paróquia de Mercedes" />
+          </div>
+          <h5 class="card-title">IECLB – Paróquia de Mercedes</h5>
+          <p class="card-text">Igreja Evangélica de Confissão Luterana, com envolvimento em ações sociais.</p>
+          <a href="https://www.google.com/maps/search/IECLB+Paróquia+de+Mercedes+PR" target="_blank" class="btn-verde">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 p-3">
+        <div class="card-body">
+          <div class="card-img">
+            <img src="img/igreja-evangelica-congregacional-do-brasil.jpg" alt="Igreja Evangélica Congregacional do Brasil (IECB)" />
+          </div>
+          <h5 class="card-title">Igreja Evangélica Congregacional do Brasil (IECB)</h5>
+          <p class="card-text">Localizada na Rua João Pessoa, atuante na comunidade local.</p>
+          <a href="https://www.google.com/maps/search/Igreja+Evangélica+Congregacional+do+Brasil+Mercedes+PR" target="_blank" class="btn-verde">📍 Ver no mapa</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Rota Rural Mercedes | Desenvolvido por Taynara Hasckel</p>
+  <p>Av. João XXIII, Mercedes - PR, Brasil | (45) 98840-0734</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
